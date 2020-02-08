@@ -3,21 +3,17 @@
     xmlns:android="http://schemas.android.com/apk/res/android">
 
     <LinearLayout
-        android:orientation="vertical" android:layout_width="match_parent"
+        android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:tag="layout/fragment_about"
         tools:context=".AboutFragment">
 
         <TextView
             android:id="@+id/aboutFragment"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="About" />
-
-        <Button
-            android:id="@+id/titleButton"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Title" />
+            android:text="This is about my cool game!" />
 
     </LinearLayout>
 </layout>
