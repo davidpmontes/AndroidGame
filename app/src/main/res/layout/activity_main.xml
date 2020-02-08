@@ -11,8 +11,8 @@
         tools:context=".MainActivity">
 
         <fragment
-            android:id="@+id/titleFragment"
-            android:name="com.example.mygame.TitleFragment"
+            android:id="@+id/aboutFragment"
+            android:name="com.example.mygame.AboutFragment"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
 
