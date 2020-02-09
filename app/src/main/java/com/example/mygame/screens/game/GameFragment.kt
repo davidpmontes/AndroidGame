@@ -1,7 +1,6 @@
-package com.example.mygame
+package com.example.mygame.screens.game
 
 
-import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
 import android.view.*
@@ -9,23 +8,29 @@ import android.widget.Toast
 import androidx.core.app.ShareCompat
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.Navigation
-import androidx.navigation.findNavController
+import com.example.mygame.screens.game.GameFragmentDirections
+import com.example.mygame.R
 import com.example.mygame.databinding.FragmentGameBinding
-import kotlinx.android.synthetic.main.fragment_game.*
 
 /**
  * A simple [Fragment] subclass.
  */
 class GameFragment : Fragment() {
 
+    private lateinit var viewModel: GameViewModel
+
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
-        val binding = DataBindingUtil.inflate<FragmentGameBinding>(inflater, R.layout.fragment_game, container, false)
+        val binding = DataBindingUtil.inflate<FragmentGameBinding>(inflater,
+            R.layout.fragment_game, container, false)
 
         binding.titleButton.setOnClickListener(
             Navigation.createNavigateOnClickListener(GameFragmentDirections.actionGameFragmentToTitleFragment())
         )
+
+        viewModel = ViewModelProviders.of(this).get(GameViewModel::class.java)
 
         setHasOptionsMenu(true)
 

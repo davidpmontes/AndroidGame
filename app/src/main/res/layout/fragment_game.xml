@@ -5,7 +5,7 @@
     <LinearLayout
         android:orientation="vertical" android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".GameFragment">
+        tools:context=".screens.game.GameFragment">
 
         <TextView
             android:id="@+id/gameFragment"

@@ -7,7 +7,7 @@
         android:layout_height="match_parent"
         android:orientation="vertical"
         android:tag="layout/fragment_about"
-        tools:context=".AboutFragment">
+        tools:context=".screens.AboutFragment">
 
         <TextView
             android:id="@+id/aboutFragment"

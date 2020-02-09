@@ -1,12 +1,10 @@
-package com.example.mygame
+package com.example.mygame.screens
 
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.navigation.findNavController
 import androidx.navigation.ui.NavigationUI
-import com.example.mygame.databinding.ActivityMainBinding
-import kotlinx.android.synthetic.main.fragment_game.*
+import com.example.mygame.R
 
 class MainActivity : AppCompatActivity() {
 

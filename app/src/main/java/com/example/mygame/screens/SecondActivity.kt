@@ -1,7 +1,8 @@
-package com.example.mygame
+package com.example.mygame.screens
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.mygame.R
 
 class SecondActivity : AppCompatActivity() {
 

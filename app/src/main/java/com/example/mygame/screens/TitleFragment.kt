@@ -1,15 +1,16 @@
-package com.example.mygame
+package com.example.mygame.screens
 
 
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.view.*
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.navigation.Navigation
 import androidx.navigation.findNavController
 import androidx.navigation.ui.NavigationUI
+import com.example.mygame.R
+import com.example.mygame.screens.TitleFragmentDirections
 import com.example.mygame.databinding.FragmentTitleBinding
 
 /**
@@ -19,7 +20,8 @@ class TitleFragment : Fragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
-        val binding = DataBindingUtil.inflate<FragmentTitleBinding>(inflater, R.layout.fragment_title, container, false)
+        val binding = DataBindingUtil.inflate<FragmentTitleBinding>(inflater,
+            R.layout.fragment_title, container, false)
 
         binding.gameButton.setOnClickListener(
             Navigation.createNavigateOnClickListener(TitleFragmentDirections.actionTitleFragmentToGameFragment())
@@ -41,8 +43,6 @@ class TitleFragment : Fragment() {
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        Log.d("David", item.toString())
-
         return NavigationUI.onNavDestinationSelected(item,
             view!!.findNavController()) || super.onOptionsItemSelected(item)
     }
