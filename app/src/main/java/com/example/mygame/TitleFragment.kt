@@ -1,6 +1,7 @@
 package com.example.mygame
 
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.*
@@ -23,9 +24,15 @@ class TitleFragment : Fragment() {
         binding.gameButton.setOnClickListener(
             Navigation.createNavigateOnClickListener(TitleFragmentDirections.actionTitleFragmentToGameFragment())
         )
+
         setHasOptionsMenu(true)
 
-        return binding.root
+        binding.secondActivityButton.setOnClickListener {
+            val intent = Intent(this.activity, SecondActivity::class.java)
+            startActivity(intent)
+        }
+
+        return binding.titleFragment.rootView
     }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {

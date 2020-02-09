@@ -19,5 +19,11 @@
             android:layout_height="wrap_content"
             android:text="Game" />
 
+        <Button
+            android:id="@+id/secondActivityButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="SecondActivity" />
+
     </LinearLayout>
 </layout>

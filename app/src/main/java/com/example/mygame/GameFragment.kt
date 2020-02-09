@@ -12,6 +12,7 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.Navigation
 import androidx.navigation.findNavController
 import com.example.mygame.databinding.FragmentGameBinding
+import kotlinx.android.synthetic.main.fragment_game.*
 
 /**
  * A simple [Fragment] subclass.
@@ -30,26 +31,21 @@ class GameFragment : Fragment() {
 
         Toast.makeText(context, "GLHF", Toast.LENGTH_LONG).show()
 
-        return binding.root
+        return binding.gameFragment.rootView
     }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
         super.onCreateOptionsMenu(menu, inflater)
-        inflater?.inflate(R.menu.winner_menu, menu)
+        inflater.inflate(R.menu.winner_menu, menu)
         // check if the activity resolves
         if (null == getShareIntent().resolveActivity(activity!!.packageManager)) {
             // hide the menu item if it doesn't resolve
-            menu?.findItem(R.id.share)?.setVisible(false)
+            menu.findItem(R.id.share)?.setVisible(false)
         }
     }
 
     // Creating our Share Intent
     private fun getShareIntent() : Intent {
-//        val shareIntent = Intent(Intent.ACTION_SEND)
-//
-//        shareIntent.setType("text/plain").putExtra(Intent.EXTRA_TEXT, "Share it!")
-//        return shareIntent
-
         return ShareCompat.IntentBuilder.from(activity!!)
                 .setText("Share it!")
                 .setType("text/plain")
@@ -62,7 +58,7 @@ class GameFragment : Fragment() {
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        when(item!!.itemId) {
+        when(item.itemId) {
             R.id.share -> shareSuccess()
         }
         return super.onOptionsItemSelected(item)
