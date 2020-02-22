@@ -10,6 +10,9 @@
         <action
             android:id="@+id/action_titleFragment_to_gameFragment"
             app:destination="@id/gameFragment" />
+        <action
+            android:id="@+id/action_titleFragment_to_highScoresFragment"
+            app:destination="@id/highScoresFragment" />
     </fragment>
     <fragment
         android:id="@+id/gameFragment"
@@ -23,4 +26,12 @@
         android:id="@+id/aboutFragment"
         android:name="com.example.mygame.screens.AboutFragment"
         android:label="AboutFragment" />
+    <fragment
+        android:id="@+id/highScoresFragment"
+        android:name="com.example.mygame.screens.HighScoresFragment"
+        android:label="HighScoresFragment" >
+        <action
+            android:id="@+id/action_highScoresFragment_to_titleFragment"
+            app:destination="@id/titleFragment" />
+    </fragment>
 </navigation>

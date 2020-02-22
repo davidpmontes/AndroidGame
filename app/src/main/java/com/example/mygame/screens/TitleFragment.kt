@@ -10,7 +10,6 @@ import androidx.navigation.Navigation
 import androidx.navigation.findNavController
 import androidx.navigation.ui.NavigationUI
 import com.example.mygame.R
-import com.example.mygame.screens.TitleFragmentDirections
 import com.example.mygame.databinding.FragmentTitleBinding
 
 /**
@@ -27,13 +26,17 @@ class TitleFragment : Fragment() {
             Navigation.createNavigateOnClickListener(TitleFragmentDirections.actionTitleFragmentToGameFragment())
         )
 
-        setHasOptionsMenu(true)
+        binding.highScoresButton.setOnClickListener(
+            Navigation.createNavigateOnClickListener(TitleFragmentDirections.actionTitleFragmentToHighScoresFragment())
+        )
 
         binding.secondActivityButton.setOnClickListener {
             val intent = Intent(this.activity, SecondActivity::class.java)
             startActivity(intent)
         }
 
+        setHasOptionsMenu(true)
+        
         return binding.titleFragment.rootView
     }
 

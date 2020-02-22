@@ -25,5 +25,11 @@
             android:layout_height="wrap_content"
             android:text="SecondActivity" />
 
+        <Button
+            android:id="@+id/highScoresButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="High Scores" />
+
     </LinearLayout>
 </layout>
