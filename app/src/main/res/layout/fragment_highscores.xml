@@ -3,17 +3,12 @@
     xmlns:android="http://schemas.android.com/apk/res/android">
 
     <LinearLayout
-        android:orientation="vertical"
+        android:id="@+id/highScoresFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:orientation="vertical"
         android:tag="layout/fragment_highscores"
         tools:context=".screens.HighScoresFragment">
-
-        <TextView
-            android:id="@+id/highScoresFragment"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="High Scores" />
 
         <Button
             android:id="@+id/titleButton"
@@ -21,5 +16,46 @@
             android:layout_height="wrap_content"
             android:text="Back To Title" />
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <EditText
+                android:id="@+id/guidInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:padding="10dp" />
+
+            <EditText
+                android:id="@+id/latitudeInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:padding="10dp" />
+
+            <EditText
+                android:id="@+id/longitudeInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:padding="10dp" />
+
+            <EditText
+                android:id="@+id/altitudeInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:padding="10dp" />
+
+            <Button
+                android:id="@+id/insertButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Insert" />
+
+
+        </LinearLayout>
     </LinearLayout>
 </layout>

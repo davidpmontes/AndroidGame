@@ -69,11 +69,13 @@ public class GameView extends SurfaceView implements Runnable {
     public void resume() {
         thread = new Thread(this);
         thread.start();
+        mediaPlayer.start();
     }
 
     public void pause() {
         try {
             isPlaying = false;
+            mediaPlayer.stop();
             thread.join();
         } catch (InterruptedException e) {
             e.printStackTrace();

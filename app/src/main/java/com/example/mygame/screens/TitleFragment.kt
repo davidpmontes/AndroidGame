@@ -22,9 +22,9 @@ class TitleFragment : Fragment() {
         val binding = DataBindingUtil.inflate<FragmentTitleBinding>(inflater,
             R.layout.fragment_title, container, false)
 
-        binding.gameButton.setOnClickListener(
-            Navigation.createNavigateOnClickListener(TitleFragmentDirections.actionTitleFragmentToGameFragment())
-        )
+        //binding.gameButton.setOnClickListener(
+        //    Navigation.createNavigateOnClickListener(TitleFragmentDirections.actionTitleFragmentToGameFragment())
+        //)
 
         binding.highScoresButton.setOnClickListener(
             Navigation.createNavigateOnClickListener(TitleFragmentDirections.actionTitleFragmentToHighScoresFragment())
@@ -32,11 +32,12 @@ class TitleFragment : Fragment() {
 
         binding.secondActivityButton.setOnClickListener {
             val intent = Intent(this.activity, SecondActivity::class.java)
+            intent.putExtra("name", "David")
             startActivity(intent)
         }
 
         setHasOptionsMenu(true)
-        
+
         return binding.titleFragment.rootView
     }
 
