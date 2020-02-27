@@ -4,7 +4,8 @@
     xmlns:android="http://schemas.android.com/apk/res/android">
 
     <RelativeLayout
-        android:orientation="vertical" android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".screens.TitleFragment">
 
@@ -51,6 +52,15 @@
                 android:textColor="@android:color/white"
                 android:backgroundTint="@android:color/holo_blue_dark"
                 android:text="View High Scores" />
+
+            <Button
+                android:id="@+id/setDateButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="50dp"
+                android:textColor="@android:color/white"
+                android:backgroundTint="@android:color/holo_blue_dark"
+                android:text="Choose Adventure Date" />
 
         </LinearLayout>
 

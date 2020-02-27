@@ -2,13 +2,9 @@ package com.example.mygame.screens
 
 import android.content.Intent
 import android.graphics.Point
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
-import android.view.ViewDebug
 import android.view.WindowManager
-import android.widget.Toast
-import com.example.mygame.R
+import androidx.appcompat.app.AppCompatActivity
 import com.example.mygame.screens.game.GameView
 
 class SecondActivity : AppCompatActivity() {
@@ -18,18 +14,31 @@ class SecondActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        //setContentView(R.layout.activity_second)
 
-        window.setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        var intent = getIntent()
+        var message = intent.getStringExtra("GameFinished")
+        var finalTime = intent.getFloatExtra("FinalTime", -1f)
 
-        point = Point()
-        windowManager.defaultDisplay.getSize(point)
-        gameView = GameView(this, point.x, point.y)
+        if (message == "true")
+        {
+            val intent = Intent(this, MainActivity::class.java)
+            if (finalTime > 0)
+            {
+                intent.putExtra("FinalTime", finalTime)
+            }
+            startActivity(intent)
+            finish()
+        }
+        else
+        {
+            window.setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
-        intent = getIntent()
-        Toast.makeText(applicationContext, intent.getStringExtra("name"), Toast.LENGTH_SHORT).show()
+            point = Point()
+            windowManager.defaultDisplay.getSize(point)
+            gameView = GameView(this, point.x, point.y)
 
-        setContentView(gameView)
+            setContentView(gameView)
+        }
     }
 
     override fun onPause() {
